@@ -13,5 +13,18 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  previewHead: (head) => (`
+    ${head}
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+    <link href="https://fonts.cdnfonts.com/css/mukta" rel="stylesheet"> 
+  `),
+  previewBody: (body) => (`
+    ${body}
+    <style>
+      #main {
+        background-color: red;
+      }
+    </style>
+  `)
 };
 export default config;
