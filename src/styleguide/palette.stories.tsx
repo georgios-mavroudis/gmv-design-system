@@ -17,7 +17,9 @@ export const Primary: Story = {
       <Box display='flex' flexDirection='column' pr={3}>
         <Box>Primary</Box>
         <Box display='flex' flexDirection='row'>
-          <GmBox bgcolor='primary.50' height={50}>primary.50</GmBox>
+          {/* <GmBox bgcolor='primary.50' height={50} width='5rem'></GmBox> */}
+          <Box bgcolor='primary.50' height={50} width='5rem'/>
+            
           <GmBox bgcolor='primary.100' height={50}>primary.100</GmBox>
           <GmBox bgcolor='primary.200' height={50}>primary.200</GmBox>
           <GmBox bgcolor='primary.300' height={50}>primary.300</GmBox>

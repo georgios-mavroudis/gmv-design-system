@@ -1,4 +1,4 @@
-import { PaletteColorOptions, PaletteOptions, TypeText } from "@mui/material";
+import { PaletteColorOptions, PaletteOptions, TypeAction, TypeText } from "@mui/material";
 
 const common = {
   white: '#ffffff',
@@ -11,7 +11,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-const primary: PaletteColorOptions = { 
+export const primary = { 
   50: '#E4EAEB',
   100: '#B5D6D8',
   200: '#84C1C5',
@@ -41,10 +41,8 @@ const error: PaletteColorOptions = {
   900: '#52151E',
 }
 
-// const warning: PaletteColorOptions = {
+// const warning: PaletteColorOptions = {}
 
-// }
-const s = primary['A200'];
 const success: PaletteColorOptions = { 
   50: '#DEFCCB',
   100: '#BFECAD',
@@ -77,10 +75,17 @@ const text: TypeText = {
   disabled: '#989898',
 }
 
+const action: Partial<TypeAction> = {
+  hover: primary.A200,
+  disabled: primary[900],
+  disabledBackground: neutral[100],
+}
 
-export const palette: PaletteOptions = {
+export const darkPalette: PaletteOptions = {
   primary: {
+    light: primary.A200 as string,
     main: primary.A400 as string,
+    dark: primary.A700 as string,
     ...primary,
   },
   error,
@@ -92,4 +97,28 @@ export const palette: PaletteOptions = {
   neutral,
   text,
   common,
+  action,
+  mode: 'dark',
+}
+
+export const lightPalette: PaletteOptions = {
+  primary: {
+    light: primary.A400 as string,
+    main: primary[500] as string,
+    dark: primary[700] as string,
+    ...primary,
+  },
+  error,
+  background: {
+    default: common.white,
+  },
+  // warning,
+  success,
+  neutral,
+  text: {
+    primary: primary[900]
+  },
+  common,
+  // action,
+  mode: 'light',
 }
